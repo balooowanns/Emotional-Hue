@@ -28,7 +28,15 @@ const App: React.FC = () => {
 
   useEffect(() => {
     setMounted(true);
-    refreshLogs();
+    
+    // Load logs and restore last mood
+    const recent = getRecentLogs();
+    setLogs(recent);
+    
+    // Restore the most recent mood if it exists
+    if (recent.length > 0) {
+      setCurrentMoodId(recent[0].moodId);
+    }
     
     // Attempt to detect browser language, default to JA
     if (navigator.language.startsWith('en')) {
