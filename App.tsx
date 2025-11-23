@@ -73,7 +73,7 @@ const App: React.FC = () => {
         try {
            new Notification(title, {
             body,
-            icon: 'https://cdn-icons-png.flaticon.com/512/10473/10473618.png',
+            icon: 'https://cdn-icons-png.flaticon.com/512/15535/15535759.png',
             tag: 'emotional-hue-reminder' // Replace existing notification
           });
           lastNotificationRef.current = Date.now();
@@ -229,10 +229,17 @@ const App: React.FC = () => {
         </div>
 
         {/* Header */}
-        <header className="mb-8 text-center mt-12">
-          <h1 className={`text-4xl font-extrabold tracking-tight mb-2 drop-shadow-sm transition-colors duration-1000 ${theme.text}`}>
-            {t.appTitle}
-          </h1>
+        <header className="mb-8 mt-12 flex flex-col items-center text-center">
+          <div className="flex items-center gap-3 mb-2">
+            <h1 className={`text-4xl font-extrabold tracking-tight drop-shadow-sm transition-colors duration-1000 ${theme.text}`}>
+              {t.appTitle}
+            </h1>
+            <img 
+              src="https://cdn-icons-png.flaticon.com/512/15535/15535759.png" 
+              alt="Logo" 
+              className="w-10 h-10 rounded-full shadow-lg"
+            />
+          </div>
           <p className={`text-sm font-light transition-colors duration-1000 ${theme.textMuted}`}>
             {t.appSubtitle}
           </p>
